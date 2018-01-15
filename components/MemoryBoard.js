@@ -16,24 +16,34 @@ class MemoryBoard extends Component {
         super(props);
 
         this.state = {cards: generateCards()};
+        this.state.gameEnd = "";
     }
 
     // If the method is not defined by the parent class, I have to make it a fat arrow method???
     updateBoard = (id, isHidden) => {
-        let flippedCards = (this.state.cards.filter(card => card.hidden === false))
+        let flippedCards = this.state.cards.filter(card => card.hidden === false)
         
         if (flippedCards.length === 2) {
             if (flippedCards[0].color === flippedCards[1].color) {
                 let pairedColor = flippedCards[0].color;
                 // Update state to reflect matching cards
                 this.setState((prevState, props) => {
-                    nextCards = prevState.cards.map(card => {
+                    let nextState = {};
+                    let nextCards = prevState.cards.map(card => {
                         if (card.color === pairedColor) {
                             card.paired = true;
                         }
                         return(card);
                     })
-                    return {cards: nextCards};
+
+                    nextState.cards = nextCards;
+                    
+                    if (nextCards.filter(card => card.paired === true).length == this.state.cards.length)
+                    {
+                        nextState.gameEnd = "Most rewarding game end ever.";
+                    }
+                    
+                    return nextState;
                 });
             }
         }
@@ -75,6 +85,9 @@ class MemoryBoard extends Component {
                 <View style={styles.board}>
                     {cardComponents.slice(6)}
                 </View>
+                <Text style={styles.victoryText}>
+                    {this.state.gameEnd}
+                </Text>
             </View>
         );
     }
@@ -85,7 +98,11 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         flexDirection: "row",
-    }
+    },
+    victoryText: {
+        textAlign: "center",
+        color: "green",
+    },
 });
 
 export default MemoryBoard;
