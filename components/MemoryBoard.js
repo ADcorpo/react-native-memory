@@ -1,3 +1,9 @@
+/**
+ * MemoryBoard (Component)
+ * 
+ * Holds the game's state and logic.
+ */
+
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
