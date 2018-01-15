@@ -2,6 +2,9 @@
  * MemoryBoard (Component)
  * 
  * Holds the game's state and logic.
+ * Most of the game's execution lives in updateBoard,
+ * which is called every time the user tries to flip
+ * a card with the card's ID as argument.
  */
 
 import React, { Component } from "react";
