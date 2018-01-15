@@ -19,7 +19,6 @@ class MemoryBoard extends Component {
         this.state.gameEnd = "";
     }
 
-    // If the method is not defined by the parent class, I have to make it a fat arrow method???
     updateBoard = (id, isHidden) => {
         let flippedCards = this.state.cards.filter(card => card.hidden === false)
         
