@@ -22,12 +22,6 @@ export default class App extends Component<{}> {
         <Text style={styles.welcome}>
             Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-            To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-            {instructions}
-        </Text>
         <MemoryBoard />
       </View>
     );
@@ -45,10 +39,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
