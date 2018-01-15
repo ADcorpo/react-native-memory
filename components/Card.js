@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from "React";
-import { View, TouchableHighlight, Text, StyleSheet } from "react-native";
+import { TouchableHighlight, Text, StyleSheet } from "react-native";
 
 
 class Card extends Component {
