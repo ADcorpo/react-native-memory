@@ -34,7 +34,7 @@ class MemoryBoard extends Component {
                         return(card);
                     })
                     return {cards: nextCards};
-                }); 
+                });
             }
         }
         if (flippedCards.length < 2) {
@@ -58,7 +58,7 @@ class MemoryBoard extends Component {
     }
     
     render() {
-        this.cardComponents = this.state.cards.map(card =>
+        let cardComponents = this.state.cards.map(card =>
             <Card
                 key={card.id}
                 id={card.id}
@@ -69,13 +69,13 @@ class MemoryBoard extends Component {
         );
         return (
             <View>
-            <View style={styles.board}>
-                {this.cardComponents.slice(0, 6)}
-            </View>
-            <View style={styles.board}>
-                {this.cardComponents.slice(6)}
-            </View>
+                <View style={styles.board}>
+                    {cardComponents.slice(0, 6)}
                 </View>
+                <View style={styles.board}>
+                    {cardComponents.slice(6)}
+                </View>
+            </View>
         );
     }
 }
