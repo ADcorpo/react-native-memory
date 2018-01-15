@@ -1,5 +1,15 @@
 /**
- *  A card in a Memory game.
+ * A card in a Memory game.
+ *
+ * Used to display cards according to game state.
+ * 
+ * Props:
+ * - onFlip: callback, called when the user wants to flip a Card
+ * - paired: boolean, true if the card was paired, else false
+ * - hidden: boolean, true if the card is facing down, else false
+ * - color: string, the card's color - has to be a valid HTML color
+ * - id: int, the card's identifier. Should be unique. Not used for 
+ *       critical purposes inside the Card class.
  */
 
 import React, { Component } from "React";
