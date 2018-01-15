@@ -19,7 +19,8 @@ class MemoryBoard extends Component {
         this.state.gameEnd = "";
     }
 
-    updateBoard = (id, isHidden) => {
+    // Real game logic lives here (updateBoard is called every card flip)
+    updateBoard = (id) => {
         let flippedCards = this.state.cards.filter(card => card.hidden === false)
         
         if (flippedCards.length === 2) {
