@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-import MemoryBoard from "./components/MemoryBoard.js";
+import MemoryBoard from "./MemoryBoard.js";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
